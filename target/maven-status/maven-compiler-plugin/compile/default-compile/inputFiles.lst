@@ -1,4 +1,6 @@
 /home/dinusha/project/dockch/src/main/java/com/dns/dockch/MvcConfig.java
-/home/dinusha/project/dockch/src/main/java/com/dns/dockch/controller/LoginController.java
+/home/dinusha/project/dockch/src/main/java/com/dns/dockch/entity/User.java
 /home/dinusha/project/dockch/src/main/java/com/dns/dockch/DockChApplication.java
+/home/dinusha/project/dockch/src/main/java/com/dns/dockch/dao/IUserDAO.java
+/home/dinusha/project/dockch/src/main/java/com/dns/dockch/controller/UserController.java
 /home/dinusha/project/dockch/src/main/java/com/dns/dockch/WebSecurityConfig.java
