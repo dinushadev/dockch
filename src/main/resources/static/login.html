@@ -120,7 +120,7 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
 					<!--Add Medical Center Form start -->
 						<div id="addMediCenterDiv" role="tabpanel" class="tab-pane active" >
-							<form class="form-horizontal" id="addMediCenterForm" role="form">
+							<form class="form-horizontal" id="addMediCenterForm" data-toggle="validator"  role="form">
 								<br />
 								<div class="form-group">
 									<label for="inName" class="col-lg-3 control-label">Name</label>
@@ -131,9 +131,10 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 								<div class="form-group">
 									<label for="inEmail" class="col-lg-3 control-label">Email</label>
 									<div class="col-lg-8">
-										<input type="email" class="form-control" id="inEmail" placeholder="E-Mail">
+										<input type="email" class="form-control floating-label"   id="inEmail" placeholder="E-Mail" data-error="Bruh, that email address is invalid" required>
 									</div>
 								</div>
+
 								<div class="form-group">
 									<label for="inTp" class="col-lg-3 control-label">T.P.</label>
 									<div class="col-lg-8">
@@ -195,13 +196,13 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 									</div>            
 								</div>
 
-							</form>
+							
 
 
-							<div class="modal-footer">
-								<a  class="btn btn-primary"  >REGISTER</a>
+							<div class="form-group modal-footer">
+								  <button type="submit" class="btn btn-primary">REGISTER</button>
 							</div>
-
+						</form>
 						</div>
 
 						<!--Add Medical Center Form End-->
@@ -234,6 +235,7 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
 	<script src="dist/js/ripples.min.js"></script>
 	<script src="dist/js/material.min.js"></script>
+	<script src="dist/js/validator.min.js"></script>
 	<script>
 		$(document).ready(function() {
 			// This command is used to initialize some elements and make them work properly
