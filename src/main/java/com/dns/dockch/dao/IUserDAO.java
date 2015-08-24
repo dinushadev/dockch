@@ -9,5 +9,5 @@ import com.dns.dockch.entity.User;
 public interface IUserDAO extends CrudRepository<User, Long>{
 
 	
-	List<User> findByEmail(String email);
+	public User findByEmail(String email);
 }

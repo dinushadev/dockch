@@ -16,7 +16,6 @@ import org.springframework.core.annotation.Order;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.web.csrf.CsrfFilter;
 import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.security.web.csrf.CsrfTokenRepository;
 import org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository;
@@ -26,11 +25,16 @@ import org.springframework.web.util.WebUtils;
 @Configuration
 @Order(SecurityProperties.ACCESS_OVERRIDE_ORDER)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-    @Override
+
+	@Autowired
+	private CustomUserDetailsService customUserDetailsService; 
+    
+	
+	@Override
     protected void configure(HttpSecurity http) throws Exception {
         http
             .authorizeRequests()
-                .antMatchers("/**", "/test","/dist/**").permitAll()
+                .antMatchers( "/test","/dist/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
             .formLogin()
@@ -40,12 +44,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             .logout()
                 .permitAll().and().csrf().disable();
     }
+    
+    
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth
-            .inMemoryAuthentication()
-                .withUser("user").password("123").roles("USER");
+       // auth
+           // .jdbcAuthentication().authoritiesByUsernameQuery(query)
+    	
+    	auth.userDetailsService(customUserDetailsService);
         
     }
     

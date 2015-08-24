@@ -3,16 +3,53 @@ package com.dns.dockch.entity;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-
 @Entity
 public class User {
-	
+
 	@Id
 	private Long uid;
-	
+
 	private String email;
-	
-	
+
+	private String pass;
+
+	private String roles;
+
+	private String fistName;
+
+	private String lastName;
+
+	public String getPass() {
+		return pass;
+	}
+
+	public void setPass(String pass) {
+		this.pass = pass;
+	}
+
+	public String getRoles() {
+		return roles;
+	}
+
+	public void setRoles(String roles) {
+		this.roles = roles;
+	}
+
+	public String getFistName() {
+		return fistName;
+	}
+
+	public void setFistName(String fistName) {
+		this.fistName = fistName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
 
 	public String getEmail() {
 		return email;
@@ -29,7 +66,5 @@ public class User {
 	public void setUid(Long uid) {
 		this.uid = uid;
 	}
-	
-	
 
 }
