@@ -14,9 +14,9 @@ import org.springframework.web.servlet.ModelAndView;
 import com.dns.dockch.entity.SecurityUser;
 
 @Controller
-public class HomeController {
+public class HomeWebController {
 
-	private static final Logger LOG = LoggerFactory.getLogger(HomeController.class.getName());
+	private static final Logger LOG = LoggerFactory.getLogger(HomeWebController.class.getName());
 	
 
 

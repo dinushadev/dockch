@@ -12,6 +12,7 @@
 		<link href="dist/css/roboto.min.css" rel="stylesheet" />
 		<link href="dist/css/material.min.css" rel="stylesheet" />
 		<link href="dist/css/ripples.min.css" rel="stylesheet" />
+		<title>Welcome to DockCh</title>
 
 	</head>
 
@@ -132,14 +133,14 @@
 									<div class="form-group">
 										<label for="inName" class="col-lg-3 control-label">Name</label>
 										<div class="col-lg-8">
-											<input type="text" class="form-control" id="inName" placeholder="Hospital Name"  data-error="Name is required" required>
+											<input type="text" class="form-control" id="inName" name="name" placeholder="Hospital Name"  data-error="Name is required" required>
 											<div class="help-block with-errors"></div>
 										</div>
 									</div>
 									<div class="form-group">
 										<label for="inEmail" class="col-lg-3 control-label">Email</label>
 										<div class="col-lg-8">
-											<input type="email" class="form-control"   id="inEmail" placeholder="E-Mail" data-error="Email address is not invalid" required>
+											<input type="email" class="form-control" name="email"  id="inEmail" placeholder="E-Mail" data-error="Email address is not invalid" required>
 											<div class="help-block with-errors"></div>
 										</div>
 								
@@ -149,7 +150,7 @@
 									<div class="form-group">
 										<label for="inTp" class="col-lg-3 control-label">T.P.</label>
 										<div class="col-lg-8">
-											<input type="text" class="form-control" id="inTp" placeholder="Contact No"  data-error="Contact No required" required>
+											<input type="text" class="form-control" name="tp" id="inTp" placeholder="Contact No"  data-error="Contact No required" required>
 											<div class="help-block with-errors"></div>
 										</div>
 									</div>
@@ -215,7 +216,7 @@
 
 
 									<div class="form-group modal-footer">
-										<button type="submit" class="btn btn-primary">NEXT</button>
+										<button type="button" class="btn btn-primary" onclick="createMediCenter()">NEXT</button>
 									</div>
 								</form>
 							</div>
@@ -313,6 +314,7 @@
 			<script src="dist/js/ripples.min.js"></script>
 			<script src="dist/js/material.min.js"></script>
 			<script src="dist/js/validator.min.js"></script>
+			<script src="js/hello.js"></script>
 			<script>
 				$(document).ready(function() {
 				// This command is used to initialize some elements and make them work properly
