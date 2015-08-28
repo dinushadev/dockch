@@ -9,6 +9,8 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.context.annotation.Configuration;
@@ -22,10 +24,16 @@ import org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository;
 import org.springframework.web.filter.OncePerRequestFilter;
 import org.springframework.web.util.WebUtils;
 
+import com.dns.dockch.service.CustomUserDetailsService;
+
+
 @Configuration
 @Order(SecurityProperties.ACCESS_OVERRIDE_ORDER)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
+	
+	private static final Logger LOG = LoggerFactory.getLogger(WebSecurityConfig.class.getName());
+	
 	@Autowired
 	private CustomUserDetailsService customUserDetailsService; 
     
@@ -34,7 +42,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
             .authorizeRequests()
-                .antMatchers( "/test","/dist/**").permitAll()
+                .antMatchers( "/hello","/test","/dist/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
             .formLogin()
@@ -53,6 +61,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
            // .jdbcAuthentication().authoritiesByUsernameQuery(query)
     	
     	auth.userDetailsService(customUserDetailsService);
+    
         
     }
     

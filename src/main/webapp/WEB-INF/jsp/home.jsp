@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org"
@@ -40,7 +41,7 @@
       </ul>
     
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Welcome to <></a></li>
+        <li><a href="#">Welcome to  ${user.fistName}</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -82,23 +83,10 @@
 
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<h3 class="panel-title">Login Here</h3>
+						<h3 class="panel-title">BBBB</h3>
 					</div>
 					<div class="panel-body">
-						<form th:action="@{/login}" method="post">
-						<div>
-							<label> User Name : <input type="text" name="username" />
-							</label>
-						</div>
-						<div>
-							<label> Password: <input type="password" name="password" />
-							</label>
-						</div>
-						<div>
-							<input type="submit" class="btn btn-primary" value="Login" />
-							<a href="javascript:void(0)" class="btn btn-success">Sing In</a>
-						</div>
-					</form>
+					
 				</div>
 			</div>		
 		</div>

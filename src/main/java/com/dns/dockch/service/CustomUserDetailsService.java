@@ -1,4 +1,4 @@
-package com.dns.dockch;
+package com.dns.dockch.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import com.dns.dockch.entity.SecurityUser;
 import com.dns.dockch.entity.User;
-import com.dns.dockch.service.UserService;
 
 @Service
 public class CustomUserDetailsService implements UserDetailsService{
@@ -17,6 +16,7 @@ public class CustomUserDetailsService implements UserDetailsService{
 	private UserService userService;
 	
 
+	
 	@Override
 	public UserDetails loadUserByUsername(String userName)throws UsernameNotFoundException {
 		 User user = userService.getUserByUserName(userName);
