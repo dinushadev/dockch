@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 import com.dns.dockch.dto.MedCenterDTO;
 
@@ -28,7 +29,8 @@ public class MediCenter {
 
 	private String disc;
 
-	// private User admin;
+	@OneToOne
+	private User admin;
 
 	private String logo;
 
@@ -109,11 +111,14 @@ public class MediCenter {
 		this.disc = disc;
 	}
 
-	/*
-	 * public User getAdmin() { return admin; }
-	 * 
-	 * public void setAdmin(User admin) { this.admin = admin; }
-	 */
+	public User getAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(User admin) {
+		this.admin = admin;
+	}
+
 	public String getLogo() {
 		return logo;
 	}

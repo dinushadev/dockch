@@ -21,6 +21,8 @@ public class User {
 	private String fistName;
 
 	private String lastName;
+	
+	private String contactNo;
 
 	public String getPass() {
 		return pass;
@@ -68,6 +70,14 @@ public class User {
 
 	public void setUid(Long uid) {
 		this.uid = uid;
+	}
+
+	public String getContactNo() {
+		return contactNo;
+	}
+
+	public void setContactNo(String contactNo) {
+		this.contactNo = contactNo;
 	}
 
 }

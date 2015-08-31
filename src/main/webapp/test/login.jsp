@@ -122,7 +122,7 @@
 						<ul class="nav nav-tabs" role="tablist">
 							<li role="presentation" class="active"><a href="#addMediCenterDiv" aria-controls="addMediCenterDiv" role="tab" data-toggle="tab">Medi Info</a></li>
 							<li role="presentation"><a href="#adminInfoDev" aria-controls="profile" role="tab" data-toggle="tab">Admin Information</a></li>
-						<!-- 	<li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li> -->
+							<li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
 						</ul>
 
 						<!--Add Medical Center Form start -->
@@ -216,8 +216,7 @@
 
 
 									<div class="form-group modal-footer">
-									<!-- 	<button type="button" class="btn btn-primary" id="addMediCenterBtn" role="tab" data-toggle="tab" >NEXT</button> -->
-										<a href="#adminInfoDev"  class="btn btn-primary"  aria-controls="messages" role="tab" data-toggle="tab">next</a></li>
+										<button type="button" class="btn btn-primary" onclick="createMediCenter()">NEXT</button>
 									</div>
 								</form>
 							</div>
@@ -230,17 +229,9 @@
 								<form class="form-horizontal" role="form" id="adminInfoForm" data-toggle="validator" >
 									<br />
 									<div class="form-group">
-										<label for="fistName" class="col-lg-3 control-label">First Name</label>
+										<label for="userName" class="col-lg-3 control-label">Name</label>
 										<div class="col-lg-8">
-											<input type="text" class="form-control" id="fistName" name="fistName" placeholder="First Name" required>
-												<div class="help-block with-errors"></div>
-										</div>
-
-									</div>
-									<div class="form-group">
-										<label for="lastName" class="col-lg-3 control-label">Last Name</label>
-										<div class="col-lg-8">
-											<input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" required>
+											<input type="text" class="form-control" id="userName" placeholder="Admin Name" required>
 												<div class="help-block with-errors"></div>
 										</div>
 
@@ -248,7 +239,7 @@
 									<div class="form-group">
 										<label for="email" class="col-lg-3 control-label">Email</label>
 										<div class="col-lg-8">
-											<input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+											<input type="email" class="form-control" id="email" placeholder="Email" required>
 												<div class="help-block with-errors"></div>
 										</div>
 									</div>
@@ -256,7 +247,7 @@
 									<div class="form-group">
 										<label for="password" class="col-lg-3 control-label">Password</label>
 										<div class="col-lg-8">
-											<input type="password" class="form-control" id="pass" name="pass" placeholder="Password" required>
+											<input type="password" class="form-control" id="password" placeholder="Password" required>
 												<div class="help-block with-errors"></div>
 										</div>
 									</div>
@@ -264,20 +255,20 @@
 										<div class="form-group">
 											<label for="conPassword" class="col-lg-3 control-label">Con Password</label>
 											<div class="col-lg-8">
-												<input type="password" class="form-control" id="conPass" placeholder="Password" required>
+												<input type="password" class="form-control" id="conPassword" placeholder="Password" required>
 													<div class="help-block with-errors"></div>
 											</div>
 										</div>
 										<div class="form-group">
 											<label for="tp" class="col-lg-3 control-label">TP</label>
 											<div class="col-lg-8">
-												<input type="text" class="form-control" id="tp" name="tp" placeholder="Mobile" required>
+												<input type="text" class="form-control" id="tp" placeholder="Mobile" required>
 													<div class="help-block with-errors"></div>
 											</div>
 										</div>
 
 										<div class="modal-footer form-group">
-												<button type="button" class="btn btn-primary"  onclick="createMediCenter()">Finish</button>
+												<button type="submit" class="btn btn-primary">Finish</button>
 										</div>
 
 
@@ -323,7 +314,7 @@
 			<script src="dist/js/ripples.min.js"></script>
 			<script src="dist/js/material.min.js"></script>
 			<script src="dist/js/validator.min.js"></script>
-			<script src="js/app.js"></script>
+			<script src="js/hello.js"></script>
 			<script>
 				$(document).ready(function() {
 				// This command is used to initialize some elements and make them work properly

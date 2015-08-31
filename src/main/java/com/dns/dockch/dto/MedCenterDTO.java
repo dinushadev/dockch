@@ -15,6 +15,8 @@ public class MedCenterDTO {
 	private Integer dis;
 	
 	private String desc;
+	
+	private UserDTO admin;
 
 	public Long getMid() {
 		return mid;
@@ -70,6 +72,14 @@ public class MedCenterDTO {
 
 	public void setDesc(String desc) {
 		this.desc = desc;
+	}
+
+	public UserDTO getAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(UserDTO admin) {
+		this.admin = admin;
 	}
 	
 	
