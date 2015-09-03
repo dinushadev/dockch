@@ -44,4 +44,12 @@ public class HomeWebController {
 	}
 	
 	
+	@RequestMapping("/docList")
+    public String dockList(String name, Model model) {
+		
+		return "doclist";
+		
+	}
+	
+	
 }

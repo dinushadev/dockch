@@ -44,3 +44,9 @@
 	}
 
 
+	function loadContent (page) {
+			
+			$("#mainContaner").load(page);
+	}
+
+
