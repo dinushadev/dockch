@@ -4,9 +4,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="dist/css/jquery.dataTables.css">
 <title>DockList	</title>
 </head>
 <body>
-<hi>I am the Dock List</hi>
+ <div class="tab-pane" id="docTabDiv">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#docDetails">New Doctor</button>
+        <table class="table table-hover table table-striped table-bordered" cellpadding="0" cellspacing="0" border="0" id="hospitalListTable">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Specialization</th>
+              <th>Availablity</th>
+              <th>More</th>
+              <th>(edit)</th>
+            </tr>
+          </thead>
+    
+        </table>
+
+      </div>
+
+      <script type="text/javascript" src="dist/js/jquery.dataTables.min.js"> </script>
 </body>
 </html>
