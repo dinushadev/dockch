@@ -13,6 +13,7 @@
 		<link href="dist/css/roboto.min.css" rel="stylesheet" />
 		<link href="dist/css/material.min.css" rel="stylesheet" />
 		<link href="dist/css/ripples.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="dist/css/jquery.dataTables.css">
 		<style type="text/css">
 
 			.menu {
@@ -345,8 +346,8 @@
 			<!-- Your site ends -->
 
 			<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-			<script
-			src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+			<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+			<script type="text/javascript" src="dist/js/jquery.dataTables.min.js"> </script>
 
 			<script src="dist/js/ripples.min.js"></script>
 			<script src="dist/js/material.min.js"></script>
