@@ -1,5 +1,7 @@
 package com.dns.dockch.dto;
 
+import com.dns.dockch.entity.User;
+
 public class UserDTO {
 	
 	private Long uId;
@@ -16,6 +18,17 @@ public class UserDTO {
 	private String pass;
 	
 	
+	public UserDTO(User user) {
+		this.uId = user.getUid();
+		this.fistName = user.getFistName();
+		this.lastName = user.getLastName();
+		this.email = user.getEmail();
+		
+	
+	}
+
+
+
 	public Long getuId() {
 		return uId;
 	}

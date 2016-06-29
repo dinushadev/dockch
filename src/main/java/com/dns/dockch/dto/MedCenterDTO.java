@@ -1,5 +1,8 @@
 package com.dns.dockch.dto;
 
+import com.dns.dockch.entity.Admin;
+import com.dns.dockch.entity.MediCenter;
+
 public class MedCenterDTO {
 	
 	private Long mid;
@@ -17,6 +20,17 @@ public class MedCenterDTO {
 	private String desc;
 	
 	private UserDTO admin;
+
+	public MedCenterDTO(MediCenter mediCenter) {
+		this.mid = mediCenter.getMid();
+		this.name = mediCenter.getName();
+		this.email = mediCenter.getEmail();
+		this.tp = mediCenter.getContact();
+		this.prov = mediCenter.getProvince();
+		this.dis = mediCenter.getDistrict();
+		this.desc = mediCenter.getDisc();
+		//this.admin = mediCenter.getAdmin();
+	}
 
 	public Long getMid() {
 		return mid;

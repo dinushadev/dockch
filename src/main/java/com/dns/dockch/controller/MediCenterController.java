@@ -1,5 +1,7 @@
 package com.dns.dockch.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
@@ -17,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.dns.dockch.dto.MedCenterDTO;
 import com.dns.dockch.dto.UserDTO;
+import com.dns.dockch.entity.Admin;
 import com.dns.dockch.entity.MediCenter;
 import com.dns.dockch.entity.User;
 import com.dns.dockch.service.MediCenterService;
@@ -25,8 +28,7 @@ import com.dns.dockch.service.UserService;
 @RestController
 public class MediCenterController {
 
-	private static final Logger LOG = LoggerFactory
-			.getLogger(MediCenterController.class.getName());
+	private static final Logger LOG = LoggerFactory.getLogger(MediCenterController.class.getName());
 
 	@Autowired
 	private MediCenterService mediCenterService;
@@ -52,7 +54,7 @@ public class MediCenterController {
 		admin.setLastName(adminDto.getLastName());
 		admin.setContactNo(adminDto.getTp());
 
-		User saveAdmin = userService.createUser(admin);
+		Admin saveAdmin = (Admin) userService.createUser(admin);
 
 		mc.setAdmin(saveAdmin);
 
@@ -63,7 +65,7 @@ public class MediCenterController {
 		return "success";
 	}
 
-	@RequestMapping(value = "/medcenter", method = RequestMethod.GET)
+	@RequestMapping(value = "/medcenter/{id}", method = RequestMethod.GET)
 	public String read(@RequestBody Long id) {
 
 		LOG.info("MEDI ID: " + id);
@@ -71,6 +73,16 @@ public class MediCenterController {
 		return "success";
 	}
 
+	@RequestMapping("/medcenter")
+	public List<MedCenterDTO> medCenters() {
+		List<MedCenterDTO> medList = mediCenterService.getAllMedCenters();
+		
+		/*for (User user : patientList) {
+			LOG.debug("userId:"+user.getUid()+" email:"+user.getEmail());
+		}*/
+		return medList;
+
+	}
 	private void authenticateUserAndSetSession(User user,
 			HttpServletRequest request) {
 		String username = user.getEmail();

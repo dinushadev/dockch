@@ -1,4 +1,4 @@
-package com.dns.dockch.controller;
+/*package com.dns.dockch.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -53,3 +53,4 @@ public class HomeWebController {
 	
 	
 }
+*/

@@ -1,5 +1,7 @@
 package com.dns.dockch.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,12 +15,16 @@ import com.dns.dockch.entity.Doctor;
 import com.dns.dockch.entity.Patient;
 import com.dns.dockch.entity.User;
 
+
 /**
  * @author dinusha
  *
  */
 @RestController
 public class UserController {
+	
+	 private static final Logger LOG = LoggerFactory.getLogger(UserController.class);
+
 
 	@Autowired
 	IUserDAO userRepo;
@@ -37,7 +43,7 @@ public class UserController {
 		Iterable<User> userList = userRepo.findAll();
 		
 		for (User user : userList) {
-			System.out.println("userId:"+user.getUid()+" email:"+user.getEmail());
+			LOG.debug("userId:"+user.getUid()+" email:"+user.getEmail());
 		}
 		return userList;
 
@@ -48,7 +54,7 @@ public class UserController {
 		Iterable<Doctor> docList = docRepo.findAll();
 		
 		for (User user : docList) {
-			System.out.println("userId:"+user.getUid()+" email:"+user.getEmail());
+			LOG.debug("userId:"+user.getUid()+" email:"+user.getEmail());
 		}
 		return docList;
 
@@ -59,7 +65,7 @@ public class UserController {
 		Iterable<Patient> patientList = patientRepo.findAll();
 		
 		for (User user : patientList) {
-			System.out.println("userId:"+user.getUid()+" email:"+user.getEmail());
+			LOG.debug("userId:"+user.getUid()+" email:"+user.getEmail());
 		}
 		return patientList;
 
@@ -70,10 +76,9 @@ public class UserController {
 		Iterable<Admin> patientList = adminRepo.findAll();
 		
 		for (User user : patientList) {
-			System.out.println("userId:"+user.getUid()+" email:"+user.getEmail());
+			LOG.debug("userId:"+user.getUid()+" email:"+user.getEmail());
 		}
 		return patientList;
 
 	}
-
 }

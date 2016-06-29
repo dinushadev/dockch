@@ -1,5 +1,7 @@
 package com.dns.dockch.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorType;
@@ -12,12 +14,33 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
 @Entity
 @Table(name = "user")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "utype", discriminatorType = DiscriminatorType.STRING)
 //@DiscriminatorValue("p")
-public class User {
+public class User implements Serializable{
+
+	public User() {
+	}
+	
+	
+	
+	public User(String email, String pass, String roles, String fistName,
+			String lastName, String contactNo) {
+		super();
+		this.email = email;
+		this.pass = pass;
+		this.roles = roles;
+		this.fistName = fistName;
+		this.lastName = lastName;
+		this.contactNo = contactNo;
+	}
+
+
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

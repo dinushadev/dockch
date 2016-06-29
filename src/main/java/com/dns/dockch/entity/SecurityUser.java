@@ -1,12 +1,13 @@
 package com.dns.dockch.entity;
 
+import java.io.Serializable;
 import java.util.Collection;
 
 import org.neo4j.cypher.internal.compiler.v2_1.planner.logical.steps.expand;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-public class SecurityUser extends User implements UserDetails {
+public class SecurityUser extends User implements UserDetails , Serializable{
 	
 
 	public SecurityUser(User user) {

@@ -1,5 +1,7 @@
 package com.dns.dockch.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -11,6 +13,8 @@ import com.dns.dockch.entity.User;
 
 @Service
 public class CustomUserDetailsService implements UserDetailsService{
+	
+	private static final Logger LOG = LoggerFactory.getLogger(CustomUserDetailsService.class);
 	
 	@Autowired
 	private UserService userService;

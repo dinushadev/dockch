@@ -1,5 +1,7 @@
 package com.dns.dockch.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,7 +11,7 @@ import javax.persistence.OneToOne;
 import com.dns.dockch.dto.MedCenterDTO;
 
 @Entity(name = "medi_center")
-public class MediCenter {
+public class MediCenter implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -30,7 +32,7 @@ public class MediCenter {
 	private String disc;
 
 	@OneToOne
-	private User admin;
+	private Admin admin;
 
 	private String logo;
 
@@ -111,11 +113,11 @@ public class MediCenter {
 		this.disc = disc;
 	}
 
-	public User getAdmin() {
+	public Admin getAdmin() {
 		return admin;
 	}
 
-	public void setAdmin(User admin) {
+	public void setAdmin(Admin admin) {
 		this.admin = admin;
 	}
 
